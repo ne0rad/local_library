@@ -6,15 +6,8 @@ block content
     ul
         each author in author_list
             li
-                a(href=author.url) #{author.name}
-                if author.date_of_birth_formatted==''
-                    if author.date_of_death_formatted != ''
-                        span (Unknown - #{author.date_of_death_formatted})
-                else if author.date_of_death_formatted==''
-                    if author.date_of_birth_formatted != ''
-                        span (#{author.date_of_birth_formatted} - Today)
-                else 
-                    span (#{author.date_of_birth_formatted} - #{author.date_of_death_formatted})
+                a(href=author.url) #{author.name} 
+                | (#{author.date_of_birth_formatted} - #{author.date_of_death_formatted})
 
         else
             li There are no authors.
